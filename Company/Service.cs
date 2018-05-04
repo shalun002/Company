@@ -34,20 +34,42 @@ namespace Company
 
         }
 
-        public void PrintInfo()
+        public void PrintInfo(List<Employees> empl)
         {
-            if (emp!= null)
+            if (empl != null)
             {
 
             }
-            foreach (Employees item in emp)
+            foreach (Employees item in empl)
             {
                 Console.WriteLine("ФИО: {0}, ({1}) \t {2} {3}",item.FullName, item.StartDate, item.Salary, item.Position);
             }
         }
 
-        public void Report1()
+        public void Report1(Vacancies vac)
         {
+            double summSal = 0;
+            int ClerkCount = 0;
+
+            foreach (Employees item in emp)
+            {
+                if(item.Position == Vacancies.Clerk)
+                {
+                    summSal += item.Salary;
+                    ClerkCount++;
+                }
+            }
+
+            summSal = summSal / ClerkCount;
+
+            List<Employees> list = new List<Employees>();
+            foreach (Employees item in emp)
+            {
+                if (item.Position == vac && item.Salary > summSal)
+                {
+                    list.Add(item);
+                }
+            }
 
         }
     }
