@@ -70,9 +70,25 @@ namespace Company
                     list.Add(item);
                 }
             }
-            Console.WriteLine("{0}, зарплата которых  {1} всех ({2}) клерков", vac.ToString(), summSal, ClerkCount);
+            Console.WriteLine("{0}, зарплата которых больше средней зарплаты {1} всех ({2}) клерков", vac.ToString(), summSal, ClerkCount);
+
+            list = list.OrderBy(o => o.FullName).ToList();
 
             PrintInfo(list);
+        }
+
+        public void Report2()
+        {
+            Employees boss = new Employees(); 
+
+            foreach (Employees item in emp)
+            {
+                if (item.Position != Vacancies.Boss)
+                {
+                    boss = item;
+                    break;
+                }
+            }
         }
     }
 }
