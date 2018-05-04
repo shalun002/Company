@@ -13,8 +13,11 @@ namespace Company
             Service serv = new Service();
             serv.GenerateEmployee();
             serv.PrintInfo(serv.emp);
-            Console.WriteLine();
+            Console.WriteLine("\n");
             serv.Report1(Vacancies.Manager);
+            Console.WriteLine("\n");
+            serv.Report2();
+
         }
     }
 }
