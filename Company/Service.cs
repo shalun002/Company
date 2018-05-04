@@ -70,7 +70,9 @@ namespace Company
                     list.Add(item);
                 }
             }
+            Console.WriteLine("{0}, зарплата которых  {1} всех ({2}) клерков", vac.ToString(), summSal, ClerkCount);
 
+            PrintInfo(list);
         }
     }
 }

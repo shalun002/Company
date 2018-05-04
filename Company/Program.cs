@@ -12,7 +12,8 @@ namespace Company
         {
             Service serv = new Service();
             serv.GenerateEmployee();
-            serv.PrintInfo();
+            serv.PrintInfo(serv.emp);
+            serv.Report1(Vacancies.Manager);
         }
     }
 }
