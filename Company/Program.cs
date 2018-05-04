@@ -17,7 +17,6 @@ namespace Company
             serv.Report1(Vacancies.Manager);
             Console.WriteLine("\n");
             serv.Report2();
-
         }
     }
 }
